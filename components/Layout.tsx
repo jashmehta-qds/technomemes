@@ -25,7 +25,7 @@ const Layout = ({ children }: Props) => {
 
           <ul className="flex justify-end items-center gap-x-4 body-font border-bottom-1 mint__card p-8">
           <div className=" flex-auto justify-between items-center">
-            <h2 className="heading text-3xl w-full">TechnoMemes</h2>
+            <h2 className="heading text-2xl md:text-3xl w-full">TechnoMemes</h2>
           </div>
             <li
               className={`${

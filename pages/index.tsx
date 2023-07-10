@@ -11,9 +11,9 @@ import {
   useTokenSupply,
 } from "@thirdweb-dev/react";
 import { useMemo, useState } from "react";
-import { contract_abi } from "./contract";
 import { BigNumber, utils } from "ethers";
 import Link from "next/link";
+import contract_abi from "./contract";
 type ChainProps = {
   activeChainId: number;
 };
@@ -46,7 +46,7 @@ const Home = (props: ChainProps) => {
   const [qty, setQty] = useState(1);
   const { mutateAsync, isLoading, error } = useContractWrite(nftDrop, "mint");
   // const { mutateAsync: callIsMintingOn } = useContractRead(nftDrop, "totalSupply");
- useMemo(() => {
+  useMemo(() => {
     if (nftDrop) {
       const supply = async () => {
         const x = await nftDrop?.erc1155.totalSupply(BigNumber.from(1)._hex);
@@ -130,7 +130,6 @@ const Home = (props: ChainProps) => {
     <>
       <div className="w-full min-h-screen flex justify-center items-center">
         <div className="about__content mint__card p-4 rounded-lg w-4/5 md:w-4/12">
-    
           <div className="card__top flex justify-between items-center">
             <h3 className="heading text-xl w-full text-center text-slate-800">
               {" "}
@@ -178,13 +177,19 @@ const Home = (props: ChainProps) => {
                 <button
                   onClick={mint}
                   disabled={isMinting}
-                  className="p-2 bg-[#0ea4e9] rounded-md w-[70%] text-white heading"
+                  className={`p-2 ${
+                    isMinting
+                      ? "bg-green-400"
+                      : isWrongNetwork
+                      ? "bg-slate-400"
+                      : "bg-sky-700"
+                  } rounded-md w-[70%] text-white heading`}
                 >
                   {isMinting
                     ? "Minting"
                     : isWrongNetwork
                     ? "Change network"
-                    : `Mint ${qty} for ${(qty * 0.0069).toPrecision(4)} 🚀`}
+                    : `Mint ${qty} for ${(qty * 0.0069).toPrecision(4)}`}
                 </button>
               </div>
             ) : (
@@ -195,11 +200,13 @@ const Home = (props: ChainProps) => {
                 
               )} */}
             <span className="loader-mint"></span>
-            <div className={` ${textColor} text-center text-3xl mt-4`}>  <b >{420 - supply > 0 ?420 - supply  : "None"}</b>&nbsp;left</div>
-
+            <div className={` ${textColor} text-center text-3xl mt-4`}>
+              {" "}
+              <b>{420 - supply > 0 ? 420 - supply : "None"}</b>&nbsp;left
+            </div>
           </div>
         </div>
-      </div >
+      </div>
       {succes ? (
         <div
           className="p-4 mb-4 text-sm text-green-700 bg-green-100 rounded-lg fixed bottom-0 right-4"
