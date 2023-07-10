@@ -13,7 +13,7 @@ const Layout = ({ children }: Props) => {
   return (
     <>
       <Head>
-        <title>cuteastros</title>
+        <title>technomemes</title>
         <meta
           name="description"
           content="technomemes is a unique collection of memes in the tech realm"

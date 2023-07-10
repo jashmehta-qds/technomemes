@@ -46,16 +46,15 @@ const Home = (props: ChainProps) => {
   const [qty, setQty] = useState(1);
   const { mutateAsync, isLoading, error } = useContractWrite(nftDrop, "mint");
   // const { mutateAsync: callIsMintingOn } = useContractRead(nftDrop, "totalSupply");
-  const currentSupply = useMemo(() => {
+ useMemo(() => {
     if (nftDrop) {
       const supply = async () => {
         const x = await nftDrop?.erc1155.totalSupply(BigNumber.from(1)._hex);
-        console.log("sup", x);
         setSupply(BigNumber.from(x).toNumber());
       };
       supply();
     }
-  }, [nftDrop]);
+  }, [nftDrop, succes]);
   // mint function
 
   const textColor = useMemo(() => {
@@ -140,7 +139,7 @@ const Home = (props: ChainProps) => {
                 href="https://twitter.com/elonmusk/status/1678098028849143809?s=20"
                 target={"_blank"}
               >
-                'Zuck is a Cuck'
+                &apos;Zuck is a Cuck&apos;
               </Link>
             </h3>
           </div>

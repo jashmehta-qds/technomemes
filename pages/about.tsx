@@ -5,7 +5,7 @@ const about = () => {
   return (
     <>
         <Head>
-            <title>about cuteastros</title>
+            <title>about technomemes</title>
         </Head>
         <div className='w-full min-h-screen flex justify-center items-center'>
             <div className='about__content about__card p-4 rounded-lg w-4/5 md:w-4/12'>
