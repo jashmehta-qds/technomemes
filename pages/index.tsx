@@ -13,7 +13,7 @@ import {
 import { useMemo, useState } from "react";
 import { BigNumber, utils } from "ethers";
 import Link from "next/link";
-import contract_abi from "./contract";
+import contract_abi from "../components/contract";
 type ChainProps = {
   activeChainId: number;
 };
