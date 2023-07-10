@@ -9,8 +9,8 @@
 }
 
 body {
-  background-image: url(../public/bg2.jpg);
-  background-size: cover;
+  background-image: url(../public/bg2.png);
+  background-size:cover;
   background-repeat: no-repeat;
   min-height: 100vh;
 }
@@ -25,9 +25,13 @@ body {
 
 .mint__card {
   backdrop-filter: blur(15px);
-  background: #ffffffd6;
+
 }
 
+.about__card {
+  backdrop-filter: blur(24px);
+
+}
 
 /* loader */
 

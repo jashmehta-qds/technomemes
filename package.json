@@ -11,6 +11,8 @@
   "dependencies": {
     "@thirdweb-dev/react": "^3.2.2",
     "@thirdweb-dev/sdk": "^3.2.2",
+    "@types/bn.js": "^5.1.1",
+    "bn.js": "^5.2.1",
     "ethers": "^5.7.1",
     "next": "12.3.1",
     "react": "18.2.0",
