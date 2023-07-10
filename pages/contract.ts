@@ -1,4 +1,4 @@
-export const contract_abi = 
+ const contract_abi = 
     [
         {
             "inputs": [],
@@ -568,3 +568,5 @@ export const contract_abi =
             "type": "function"
         }
     ]
+
+    export default contract_abi;
