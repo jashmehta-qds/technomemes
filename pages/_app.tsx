@@ -3,7 +3,7 @@ import '../styles/globals.css'
 import type { AppProps } from 'next/app'
 import { ThirdwebProvider, ChainId } from '@thirdweb-dev/react'
 
-const activeChainId = ChainId.Goerli;
+const activeChainId = ChainId.Mainnet;
 
 function MyApp({ Component, pageProps }: AppProps) {
     return (

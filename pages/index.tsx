@@ -17,7 +17,7 @@ import contract_abi from "../components/contract";
 type ChainProps = {
   activeChainId: number;
 };
-const contractAdress = "0x1D5331f20FeCE5DDC4A3Cb03677e395b7148C827";
+const contractAdress = "0x9376cd82ADbcA3a37e1b892DA3a90954e49e8dBd";
 
 const Home = (props: ChainProps) => {
   // contract initialization.
